@@ -6,7 +6,6 @@ This repository proivdes source code for automatic segmentation of Gross Target 
 
 # Requirement
 * Pytorch version >=0.4.1
-* PyMIC library
 * TensorboardX to visualize training performance
 * Some common python packages such as Numpy, Pandas, SimpleITK
 

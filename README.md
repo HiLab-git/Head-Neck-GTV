@@ -13,7 +13,7 @@ This repository proivdes source code for automatic segmentation of Gross Target 
 Run the following command to install PyMIC:
 
 ```bash
-pip install PYMIC
+pip install HNGTV
 ```
 
 ## Data and preprocessing

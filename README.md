@@ -9,6 +9,13 @@ This repository proivdes source code for automatic segmentation of Gross Target 
 * TensorboardX to visualize training performance
 * Some common python packages such as Numpy, Pandas, SimpleITK
 
+# Usage
+Run the following command to install PyMIC:
+
+```bash
+pip install PYMIC
+```
+
 ## Data and preprocessing
 1. The dataset can be downloaded from StructSeg2019 Challenge. It consists of 50 CT images of GTV. Download the images and save them in to a single folder. 
 2. Preprocess the data according to your needs and then save the images and annotations to a single folder respectively, like `GTV_root/data` and `GTV_root/label`.

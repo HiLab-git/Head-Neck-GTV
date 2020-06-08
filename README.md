@@ -10,7 +10,7 @@ This repository proivdes source code for automatic segmentation of Gross Target 
 * Some common python packages such as Numpy, Pandas, SimpleITK
 
 # Usage
-Run the following command to install PyMIC:
+Run the following command to install H&N_GTV:
 
 ```bash
 pip install HNGTV

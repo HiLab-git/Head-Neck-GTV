@@ -15,4 +15,4 @@ Run the following command to install PyMIC:
 ```bash
 pip install PYMIC
 ```
-Go to the`examples/miccai` folder to see more detailed usage of HNGTV.
+In this example, we use 2D U-Net to segment the heart from X-Ray images. First we download the images from internet, then edit the configuration file for training and testing. During training, we use tensorboard to observe the performance of the network at different iterations. We then apply the trained model to testing images and obtain quantitative evaluation results.

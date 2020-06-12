@@ -21,8 +21,8 @@ Run the following command to install PyMIC:
 pip install PYMIC
 ```
 ## Data and preprocessing
-1. The dataset can be downloaded from StructSeg2019 Challenge. It consists of 50 CT images of GTV. Download the images and save them in to a single folder. 
-2. Preprocess the data according to your needs and then save the images and annotations to a single folder respectively, like `GTV_root/data` and `GTV_root/label`.
+1. The dataset can be downloaded from StructSeg2019 Challenge. It consists of 50 CT images of GTV. Download the images and save them in to a single folder, like  `/origindata`. 
+2. Set `dataroot` and  `saveroot` and then run `python preprocess.py`to save the images and annotations to a single folder respectively, like `GTV_root/data` and `GTV_root/label`. You can also preprocess the data according to your needs.
 3. Set `GTV_root` according to your computer in `write_csv_files.py` and run `python write_csv_files.py` to randomly split the 50 images into training (40), validation (10) and testing (10) sets. The validation set and testing set are the same in our experimental setting. The output csv files are saved in `config`.
 
 ## Training

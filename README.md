@@ -1,5 +1,7 @@
 # Automatic segmentation of NPC GTV from CT images
 
+<img src="seg.png" width="730" height="716"/> 
+
 This repository proivdes source code for automatic segmentation of Gross Target Volume (GTV) of Nasopharynx Cancer (NPC) from CT images according to the following paper:
 
 * [1] Haochen Mei, Wenhui Lei, Ran Gu, Shan Ye, Zhengwentai Sun, Shichuan Zhang and Guotai Wang. "Automatic Segmentation of Gross Target Volume of Nasopharynx Cancer using Ensemble of Multiscale Deep Neural Networks with Spatial Attention." NeuroComputing (under review). 2020.
@@ -10,14 +12,14 @@ This repository proivdes source code for automatic segmentation of Gross Target 
 * Some common python packages such as Numpy, Pandas, SimpleITK
 
 # Usage
-# Install PyMIC
+In this example, we use 2D U-Net to segment the heart from X-Ray images. First we download the images from internet, then edit the configuration file for training and testing. During training, we use tensorboard to observe the performance of the network at different iterations. We then apply the trained model to testing images and obtain quantitative evaluation results.
+
+## Install PyMIC
 Run the following command to install PyMIC:
 
 ```bash
 pip install PYMIC
 ```
-In this example, we use 2D U-Net to segment the heart from X-Ray images. First we download the images from internet, then edit the configuration file for training and testing. During training, we use tensorboard to observe the performance of the network at different iterations. We then apply the trained model to testing images and obtain quantitative evaluation results.
-
 ## Data and preprocessing
 1. The dataset can be downloaded from StructSeg2019 Challenge. It consists of 50 CT images of GTV. Download the images and save them in to a single folder. 
 2. Preprocess the data according to your needs and then save the images and annotations to a single folder respectively, like `GTV_root/data` and `GTV_root/label`.

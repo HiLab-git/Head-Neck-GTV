@@ -12,7 +12,7 @@ This repository proivdes source code for automatic segmentation of Gross Target 
 * Some common python packages such as Numpy, Pandas, SimpleITK
 
 # Usage
-In this example, we use 2D U-Net to segment the heart from X-Ray images. First we download the images from internet, then edit the configuration file for training and testing. During training, we use tensorboard to observe the performance of the network at different iterations. We then apply the trained model to testing images and obtain quantitative evaluation results.
+In this repository, we use 2.5D U-Net to segment Gross Target Volume (GTV) of Nasopharynx Cancer (NPC) from CT images. First we download the images from internet, then edit the configuration file for training and testing. During training, we use tensorboard to observe the performance of the network at different iterations. We then apply the trained model to testing images and obtain quantitative evaluation results.
 
 ## Install PyMIC
 Run the following command to install PyMIC:

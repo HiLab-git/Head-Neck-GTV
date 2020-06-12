@@ -9,7 +9,7 @@ import skimage
 
 from scipy import ndimage
 from pymic.util.image_process import *
-from Toolkit.deform import *
+from pymic.Toolkit.deform import *
 
 class Rescale(object):
     """Rescale the image in a sample to a given size.

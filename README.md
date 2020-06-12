@@ -14,12 +14,6 @@ This repository proivdes source code for automatic segmentation of Gross Target 
 # Usage
 In this repository, we use 2.5D U-Net to segment Gross Target Volume (GTV) of Nasopharynx Cancer (NPC) from CT images. First we download the images from internet, then edit the configuration file for training and testing. During training, we use tensorboard to observe the performance of the network at different iterations. We then apply the trained model to testing images and obtain quantitative evaluation results.
 
-## Install PyMIC
-Run the following command to install PyMIC:
-
-```bash
-pip install PYMIC
-```
 ## Data and preprocessing
 1. The dataset can be downloaded from StructSeg2019 Challenge. It consists of 50 CT images of GTV. Download the images and save them in to a single folder, like  `/origindata`. 
 2. Set `dataroot` and  `saveroot` and then run `python preprocess.py`to save the images and annotations to a single folder respectively, like `GTV_root/data` and `GTV_root/label`. You can also preprocess the data according to your needs.
@@ -29,6 +23,7 @@ pip install PYMIC
 1. Set the value of `root_dir` as your `GTV_root` in `config/train_test.cfg`. Add the path of `PyMIC` to `PYTHONPATH` environment variable (if you haven't done this). Then you can start trainning by running following command:
  
 ```bash
+export PYTHONPATH=$PYTHONPATH:your_path_of_PyMIC
 python ../../pymic/train_infer/train_infer.py train config/train_test.cfg
 ```
 

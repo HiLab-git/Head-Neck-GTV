@@ -16,8 +16,8 @@ In this repository, we use 2.5D U-Net to segment Gross Target Volume (GTV) of Na
 
 ## Data and preprocessing
 1. The dataset can be downloaded from StructSeg2019 Challenge. It consists of 50 CT images of GTV. Download the images and save them in to a single folder, like  `/origindata`. 
-2. Create two folders in your saveroot, like `saveroot/data` and `saveroot/label`. Then set `dataroot` and  `saveroot` and then run `python movefiles.py`to save the images and annotations to a single folder respectively.
-3. Create three folders for each scale image in your saveroot and then create two folders in each of them like `saveroot/small_sacle/data` and `saveroot/small_sacle/label`. Run `python preprocess.py`to perform preprocessing for the images and annotations and then save each of them to a single folder respectively.
+2. Create two folders in your saveroot, like `saveroot/data` and `saveroot/label`. Then set `dataroot` and  `saveroot` and then run `python movefiles.py` in Data_preprocessing folder to save the images and annotations to a single folder respectively.
+3. Create three folders for each scale image in your saveroot and then create two folders in each of them like `saveroot/small_sacle/data` and `saveroot/small_sacle/label`. Run `python preprocess.py` in Data_preprocessing folder to perform preprocessing for the images and annotations and then save each of them to a single folder respectively.
 4. Set `saveroot` according to your computer in `examples/miccai/write_csv_files.py` and run `python write_csv_files.py` to randomly split the 50 images into training (40), validation (10) and testing (10) sets. The validation set and testing set are the same in our experimental setting. The output csv files are saved in `config`.
 
 ## Training

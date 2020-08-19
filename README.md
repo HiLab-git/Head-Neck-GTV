@@ -7,7 +7,8 @@ This repository proivdes source code for automatic segmentation of Gross Target 
 * [1] Haochen Mei, Wenhui Lei, Ran Gu, Shan Ye, Zhengwentai Sun, Shichuan Zhang and Guotai Wang. "Automatic Segmentation of Gross Target Volume of Nasopharynx Cancer using Ensemble of Multiscale Deep Neural Networks with Spatial Attention." NeuroComputing, accepted. 2020.
 
 # Requirement
-* Pytorch version =0.4.1
+* Pytorch version=0.4.1
+* PyMIC version=0.2 (install it by `pip install PYMIC==0.2`)
 * TensorboardX to visualize training performance
 * Some common python packages such as Numpy, Pandas, SimpleITK
 
@@ -24,8 +25,7 @@ In this repository, we use 2.5D U-Net to segment Gross Target Volume (GTV) of Na
 1. Set the value of `root_dir` as your `GTV_root` in `config/train_test.cfg`. Add the path of `PyMIC` to `PYTHONPATH` environment variable (if you haven't done this). Then you can start trainning by running following command:
  
 ```bash
-export PYTHONPATH=$PYTHONPATH:your_path_of_PyMIC
-python ../../pymic/train_infer/train_infer.py train config/train_test.cfg
+python net_run_gtv.py train config/train_test.cfg
 ```
 
 2. During training or after training, run the command `tensorboard --logdir model/2D5unet` and then you will see a link in the output, such as `http://your-computer:6006`. Open the link in the browser and you can observe the average Dice score and loss during the training stage. 
@@ -35,13 +35,13 @@ python ../../pymic/train_infer/train_infer.py train config/train_test.cfg
 
 ```bash
 mkdir result
-python ../../pymic/train_infer/train_infer.py test config/train_test.cfg
+python net_run_gtv.py test config/train_test.cfg
 ```
    Or  you can directly download the weights in https://pan.baidu.com/s/1G9XA1Nm79w_o2G4Ek4H_2Q Extraction code: 35r5. The you can put the weights in `examples/miccai/model/` and perform testing phase the same as above.
 2. Then replace `ground_truth_folder` with your own `GTV_root/label` in `config/evaluation.cfg`, and run the following command to obtain quantitative evaluation results in terms of dice. 
 
 ```bash
-python ../../pymic/util/evaluation.py config/evaluation.cfg
+pymic_evaluate config/evaluation.cfg
 ```
 
 You can also set `metric = assd` in `config/evaluation.cfg` and run the evaluation command again. You will get average symmetric surface distance (assd) evaluation results.

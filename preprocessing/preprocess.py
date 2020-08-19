@@ -241,18 +241,21 @@ if __name__ == '__main__':
     '''
     Put your own path here
     '''
-    imgroot = '/home/uestcc1501h/alldataset/origindata/data'
-    labelroot = '/home/uestcc1501h/alldataset/origindata/label'
+    #imgroot = '/home/uestcc1501h/alldataset/origindata/data'
+    #labelroot = '/home/uestcc1501h/alldataset/origindata/label'
+    data_root = '/home/guotai/disk2t/data/Head_Neck/StrucSeg2019/Naso_GTV_preprocess'
+    imgroot   = data_root + '/data'
+    labelroot = data_root + '/label'
 
-    saveroot_small = '/home/uestcc1501h/alldataset/small_scale/'
+    saveroot_small = data_root + '/small_scale/'
     smalldatanewroot = saveroot_small+'data'
     smalllabelnewroot = saveroot_small+'label'
 
-    saveroot_middle = '/home/uestcc1501h/alldataset/middle_scale/'
+    saveroot_middle = data_root + '/middle_scale/'
     middledatanewroot = saveroot_middle+'data'
     middlelabelnewroot = saveroot_middle+'label'
 
-    saveroot_large = '/home/uestcc1501h/alldataset/large_scale/'
+    saveroot_large = data_root + '/large_scale/'
     largedatanewroot = saveroot_large+'data'
     largelabelnewroot = saveroot_large+'label'
 

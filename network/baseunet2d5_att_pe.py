@@ -29,48 +29,6 @@ class UNetBlock(nn.Module):
         x = self.conv2(x)
         return x
 
-class ResidualBlock(nn.Module):
-    def __init__(self, in_channels, out_channels, 
-            kernel_size, paddding, acti_func, acti_func_param):
-        super(ResidualBlock, self).__init__()
-        
-        self.in_chns   = in_channels
-        self.out_chns  = out_channels
-        self.acti_func = acti_func
-        self.relu = nn.ReLU(inplace=True)
-    
-
-        self.conv1 = ConvolutionLayer(in_channels,  out_channels, kernel_size = kernel_size, 
-                padding = paddding, acti_func=get_acti_func(acti_func, acti_func_param))
-        self.conv2 = ConvolutionLayer(out_channels, out_channels, kernel_size = kernel_size, 
-                padding = paddding, acti_func=get_acti_func(acti_func, acti_func_param))
-
-    def forward(self, x):
-        x1 = self.conv1(x)
-        x1 = self.conv2(x1)
-        x1 = x1 + x
-        return x1        
-
-class SEBlock(nn.Module):
-    def __init__(self, in_channels, out_channels, acti_func):
-        super(SEBlock, self).__init__()
-
-        
-        self.in_chns = in_channels
-        self.out_chns = out_channels
-        self.acti_func1 = acti_func
-        self.acti_func2 = nn.Sigmoid()
-        self.pool1 = nn.AdaptiveAvgPool3d(1)
-        self.fc1 = nn.Conv3d(self.in_chns, self.out_chns, 1)
-        self.fc2 = nn.Conv3d(self.out_chns, self.in_chns, 1)
-        
-    def forward(self, x):
-        f = self.pool1(x)
-        f = self.fc1(f)
-        f = self.acti_func1(f)
-        f = self.fc2(f)
-        f = self.acti_func2(f)
-        return f*x + x
 
 class AttentionBlock(nn.Module):
     def __init__(self, in_channels, out_channels):
@@ -191,13 +149,6 @@ class Baseunet2d5_att_pe(nn.Module):
 
         self.conv = nn.Conv3d(self.ft_chns[0], self.n_class, 
             kernel_size = (1, 3, 3), padding = (0, 1, 1))
-            
-        # seblock
-        self.se1 = SEBlock(self.ft_chns[0], self.ft_chns[0], get_acti_func(self.acti_func, self.params))
-        self.se2 = SEBlock(self.ft_chns[1], self.ft_chns[1], get_acti_func(self.acti_func, self.params))
-        self.se3 = SEBlock(self.ft_chns[2], self.ft_chns[2], get_acti_func(self.acti_func, self.params))
-        self.se4 = SEBlock(self.ft_chns[3], self.ft_chns[3], get_acti_func(self.acti_func, self.params))
-
 
         
         self.res1 = UNetBlock(self.in_chns, self.ft_chns[0], 

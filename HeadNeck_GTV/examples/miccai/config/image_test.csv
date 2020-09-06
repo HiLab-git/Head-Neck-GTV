@@ -1,0 +1,11 @@
+data,label
+data/10data.nii.gz,label/10data_seg.nii.gz
+data/3data.nii.gz,label/3data_seg.nii.gz
+data/5data.nii.gz,label/5data_seg.nii.gz
+data/13data.nii.gz,label/13data_seg.nii.gz
+data/12data.nii.gz,label/12data_seg.nii.gz
+data/14data.nii.gz,label/14data_seg.nii.gz
+data/42data.nii.gz,label/42data_seg.nii.gz
+data/15data.nii.gz,label/15data_seg.nii.gz
+data/1data.nii.gz,label/1data_seg.nii.gz
+data/4data.nii.gz,label/4data_seg.nii.gz

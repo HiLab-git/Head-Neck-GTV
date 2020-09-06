@@ -37,7 +37,7 @@ python ../../pymic/train_infer/train_infer.py train config/train_test.cfg
 mkdir result
 python ../../pymic/train_infer/train_infer.py test config/train_test.cfg
 ```
-   Or  you can directly download the weights in https://pan.baidu.com/s/1G9XA1Nm79w_o2G4Ek4H_2Q Extraction code: 35r5. The you can put the weights in `examples/miccai/model/` and perform testing phase the same as above.
+   Or  you can directly download the weights in https://pan.baidu.com/s/14UIRIHdsI8pFbIjv2GyKgw  Extraction code: ax2p. The you can put the weights in `examples/miccai/model/` and perform testing phase the same as above.
 2. Then replace `ground_truth_folder` with your own `GTV_root/label` in `config/evaluation.cfg`, and run the following command to obtain quantitative evaluation results in terms of dice. 
 
 ```bash

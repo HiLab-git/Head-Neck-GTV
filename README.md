@@ -25,7 +25,7 @@ In this repository, we use 2.5D U-Net to segment Gross Target Volume (GTV) of Na
 1. Set the value of `root_dir` as your `GTV_root` in `config/train_test.cfg`. Add the path of `PyMIC` to `PYTHONPATH` environment variable (if you haven't done this). Then you can start trainning by running following command:
  
 ```bash
-python net_run_gtv.py train config/unet2d5.cfg
+python net_run_gtv.py train config/unet2d5_pe_att.cfg
 ```
 
 2. During training or after training, run the command `tensorboard --logdir model/2D5unet` and then you will see a link in the output, such as `http://your-computer:6006`. Open the link in the browser and you can observe the average Dice score and loss during the training stage. 
@@ -35,7 +35,7 @@ python net_run_gtv.py train config/unet2d5.cfg
 
 ```bash
 mkdir result
-python net_run_gtv.py test config/unet2d5.cfg
+python net_run_gtv.py test config/unet2d5_pe_att.cfg
 ```
    Or  you can directly download the weights in https://pan.baidu.com/s/14UIRIHdsI8pFbIjv2GyKgw  Extraction code: ax2p. The you can put the weights in `examples/miccai/model/` and perform testing phase the same as above.
 2. Then replace `ground_truth_folder` with your own `GTV_root/label` in `config/evaluation.cfg`, and run the following command to obtain quantitative evaluation results in terms of dice. 

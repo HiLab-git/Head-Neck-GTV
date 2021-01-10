@@ -37,7 +37,7 @@ python ../../pymic/train_infer/train_infer.py train config/train_test.cfg
 mkdir result
 python ../../pymic/train_infer/train_infer.py test config/train_test.cfg
 ```
-   Or you can directly download the pre-trained models of Unet2D5(https://pan.baidu.com/s/14UIRIHdsI8pFbIjv2GyKgw  Extraction code: ax2p)and our proposed model(https://pan.baidu.com/s/14UIRIHdsI8pFbIjv2GyKgw  Extraction code: ax2p). Then you can put the weights in `examples/miccai/model/` and perform testing phase the same as above. The performance of these two models at DICE is 0.6216 and 0.6504 respectively.
+Or you can directly download the pre-trained models of Unet2D5(https://pan.baidu.com/s/1RCHojd0MXM1NBoBtA1plQw Extraction code: 5u2i )and our proposed model(https://pan.baidu.com/s/14UIRIHdsI8pFbIjv2GyKgw  Extraction code: ax2p). Then you can put the weights in `examples/miccai/model/` and perform testing phase the same as above. The performance of these two models at DICE is 0.6216 and 0.6504 respectively.
 2. Then replace `ground_truth_folder` with your own `GTV_root/label` in `config/evaluation.cfg`, and run the following command to obtain quantitative evaluation results in terms of dice. 
 
 ```bash
